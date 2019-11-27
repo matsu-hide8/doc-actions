@@ -1,0 +1,14 @@
+name: 'Publish'
+description: 'Publish documents written in asciidoc to github.io'
+inputs:
+  github-io-repository:
+    description: 'publish repository'
+    required: true
+outputs:
+  time:
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ github-io-repository }}
